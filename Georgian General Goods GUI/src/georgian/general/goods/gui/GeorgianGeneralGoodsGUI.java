@@ -626,53 +626,36 @@ public class GeorgianGeneralGoodsGUI extends JFrame {
                     "Submit Employee?", JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
                 // PUT IN CODE WHICH WILL SUBMIT 
                 //THAT MEANS YOU, JAKE AND CHRIS
-                if (firstNameTextField.getText().equals("")) {
-                    JOptionPane.showMessageDialog(null, "Sorry, please fill in the First Name TextBox");
-                } else if (lastNameTextField.getText().equals("")) {
-                    JOptionPane.showMessageDialog(null, "Sorry, please fill in the Last Name TextBox");
-                } else if (addressTextField.getText().equals("")) {
-                    JOptionPane.showMessageDialog(null, "Sorry, please fill in the Address TextBox");
-                } else if (emailTextField.getText().equals("")) {
-                    JOptionPane.showMessageDialog(null, "Sorry, please fill in the Email TextBox");
-                } else if (phoneTextField.getText().equals("")) {
-                    JOptionPane.showMessageDialog(null, "Sorry, please fill in the Phone TextBox");
-                } else if (genderTextField.getText().equals("")) {
-                    JOptionPane.showMessageDialog(null, "Sorry, please fill in the Gender TextBox");
-                } else if (birthYearTextField.getText().equals("")) {
-                    JOptionPane.showMessageDialog(null, "Sorry, please fill in the Birth Year TextBox");
-                } else if (birthMonthTextField.getText().equals("")) {
-                    JOptionPane.showMessageDialog(null, "Sorry, please fill in the Birth Month TextBox");
-                } else if (birthDayTextField.getText().equals("")) {
-                    JOptionPane.showMessageDialog(null, "Sorry, please fill in the Birth Day TextBox");
-                } else if (sinTextField.getText().equals("")) {
-                    JOptionPane.showMessageDialog(null, "Sorry, please fill in the SIN TextBox");
-                } else if (departmentTextField.getText().equals("")) {
-                    JOptionPane.showMessageDialog(null, "Sorry, please fill in the department TextBox");
-                } else if (positionTextField.getText().equals("")) {
-                    JOptionPane.showMessageDialog(null, "Sorry, please fill in the position TextBox");
-                } else if (statusTextField.getText().equals("")) {
-                    JOptionPane.showMessageDialog(null, "Sorry, please fill in the Status TextBox");
-                } else if (hireYearTextField.getText().equals("")) {
-                    JOptionPane.showMessageDialog(null, "Sorry, please fill in the Hire Year TextBox");
-                } else if (hireMonthTextField.getText().equals("")) {
-                    JOptionPane.showMessageDialog(null, "Sorry, please fill in the Hire Month TextBox");
-                } else if (hireDayTextField.getText().equals("")) {
-                    JOptionPane.showMessageDialog(null, "Sorry, please fill in the Hire Day TextBox");
-                } else if (hourlyEmployeeHourlyRateTextField.getText().equals("")) {
-                    JOptionPane.showMessageDialog(null, "Sorry, please fill in the Hourly Rate TextBox");
-                } else if (hourlyEmployeeHoursWorkedTextField.getText().equals("")) {
-                    JOptionPane.showMessageDialog(null, "Sorry, please fill in the Hours Worked TextBox");
-                } else if (commissionEmployeeCommissionRateTextField.getText().equals("")) {
-                    JOptionPane.showMessageDialog(null, "Sorry, please fill in the Commission Rate TextBox");
-                } else if (commissionEmployeeGrossSalesTextField.getText().equals("")) {
-                    JOptionPane.showMessageDialog(null, "Sorry, please fill in the Gross Sales TextBox");
-                } else if (basePlusCommissionEmployeeBaseSalarytextField.getText().equals("")) {
-                    JOptionPane.showMessageDialog(null, "Sorry, please fill in the Base Salary TextBox");
-                } else if (salaryEmployeeSalaryTextField.getText().equals("")) {
-                    JOptionPane.showMessageDialog(null, "Sorry, please fill in the First Name TextBox");
-                } else {
+                HRDefaultTextboxCheck();
+                 if (HRTabPane.isShowing()) {
+                     employeeOptions.addActionListener(new ActionListener() {
+                         @Override
+                         public void actionPerformed(ActionEvent e) {
+                             JComboBox employeeOptions = (JComboBox) e.getSource();
+                             
+                             Object selected = employeeOptions.getSelectedItem();
+                             switch (selected.toString()) {
+                                 case "Salary":
+                                     SalaryCheck();
+                                     break;
+                                 case "Hourly":
+                                     HRHourlyCheck();
+                                     break;
+                                 case "Commissions":
+                                     CommissionCheck();
+                                     break;
+                                 case "Base Plus Commission":
+                                     BasePlusCheck();
+                                     break;
+                                 default:
+                                     break;
+                             }
+                                 
+                         }
+                     });
+                 }
                     //JAKE CODE HERE
-                }
+                
 
             }
         }
@@ -734,47 +717,9 @@ public class GeorgianGeneralGoodsGUI extends JFrame {
                     "Submit Product?", JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
                 // PUT IN CODE WHICH WILL SUBMIT 
                 //THAT MEANS YOU, JAKE AND CHRIS
-                if (productNameTextField.getText().equals("")) {
-                    JOptionPane.showMessageDialog(null, "Sorry, please fill in the Product Name TextBox");
-                } else if (productDescriptionTextField.getText().equals("")) {
-                    JOptionPane.showMessageDialog(null, "Sorry, please fill in the Description TextBox");
-                } else if (productCategoryTextField.getText().equals("")) {
-                    JOptionPane.showMessageDialog(null, "Sorry, please fill in the catagory TextBox");
-                } else if (productPackagingTextField.getText().equals("")) {
-                    JOptionPane.showMessageDialog(null, "Sorry, please fill in the Packaging TextBox");
-                } else if (productHazardsTextField.getText().equals("")) {
-                    JOptionPane.showMessageDialog(null, "Sorry, please fill in the Hazards TextBox");
-                } else if (productRegulatorTextField.getText().equals("")) {
-                    JOptionPane.showMessageDialog(null, "Sorry, please fill in the Regulator TextBox");
-                } else if (productProcurementPricePerUnitTextField.getText().equals("")) {
-                    JOptionPane.showMessageDialog(null, "Sorry, please fill in the Procurement Price TextBox");
-                } else if (productWeightTextField.getText().equals("")) {
-                    JOptionPane.showMessageDialog(null, "Sorry, please fill in the Weight TextBox");
-                } else if (productHeightTextField.getText().equals("")) {
-                    JOptionPane.showMessageDialog(null, "Sorry, please fill in the Height TextBox");
-                } else if (productWidthTextField.getText().equals("")) {
-                    JOptionPane.showMessageDialog(null, "Sorry, please fill in the Weight TextBox");
-                } else if (productlengthTextField.getText().equals("")) {
-                    JOptionPane.showMessageDialog(null, "Sorry, please fill in the Length TextBox");
-                } else if (productAdoptionMonthTextField.getText().equals("")) {
-                    JOptionPane.showMessageDialog(null, "Sorry, please fill in the Adoption Month TextBox");
-                } else if (productAdoptionYearTextField.getText().equals("")) {
-                    JOptionPane.showMessageDialog(null, "Sorry, please fill in the Adoption Year TextBox");
-                } else if (productAdoptionDayTextField.getText().equals("")) {
-                    JOptionPane.showMessageDialog(null, "Sorry, please fill in the Adoption Day TextBox");
-                } else if (productExpiryYearTextField.getText().equals("")) {
-                    JOptionPane.showMessageDialog(null, "Sorry, please fill in the Expiry Year TextBox");
-                } else if (productExpiryMonthTextField.getText().equals("")) {
-                    JOptionPane.showMessageDialog(null, "Sorry, please fill in the Expiry Month TextBox");
-                } else if (productExpiryDayTextField.getText().equals("")) {
-                    JOptionPane.showMessageDialog(null, "Sorry, please fill in the Epiry Day TextBox");
-                } else if (productFragileTextField.getText().equals("")) {
-                    JOptionPane.showMessageDialog(null, "Sorry, please fill in the Fragile TextBox");
-                } else if (productStockLevelTextField.getText().equals("")) {
-                    JOptionPane.showMessageDialog(null, "Sorry, please fill in the Stock Level TextBox");
-                } else {
+                ProductCheck();
                     //JAKE DO THIS
-                }
+                
 
             }
         }
@@ -857,22 +802,12 @@ public class GeorgianGeneralGoodsGUI extends JFrame {
                     "Manufacturer Submission?", JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
                 // PUT IN CODE WHICH WILL SUBMIT 
                 //THAT MEANS YOU, JAKE AND CHRIS
-                if (manufacturerNameTextField.getText().equals("")) {
-                    JOptionPane.showMessageDialog(null, "Sorry, please fill in the Manu Name TextBox");
-                } else if (manufacturerAddressTextField.getText().equals("")) {
-                    JOptionPane.showMessageDialog(null, "Sorry, please fill in the Address TextBox");
-                } else if (manufacturerPhoneTextField.getText().equals("")) {
-                    JOptionPane.showMessageDialog(null, "Sorry, please fill in the Phone TextBox");
-                } else if (manufacturerEmailTextField.getText().equals("")) {
-                    JOptionPane.showMessageDialog(null, "Sorry, please fill in the Email TextBox");
-                } else if (manufacturerHandlerFirstNameTextField.getText().equals("")) {
-                    JOptionPane.showMessageDialog(null, "Sorry, please fill in the First Name TextBox");
-                } else if (manufacturerHandlerLastNameTextField.getText().equals("")) {
-                    JOptionPane.showMessageDialog(null, "Sorry, please fill in the Last Name TextBox");
-                } else {
+                
+               ManuCheck();
+
                     //jake here 
 
-                }
+                
             }
         }
     }
@@ -917,6 +852,126 @@ public class GeorgianGeneralGoodsGUI extends JFrame {
                 createInventoryTabPane.setSelectedIndex(1);
             }
         }
+    }
+    public void HRDefaultTextboxCheck() {
+        //call this when doing the HR stuff
+        if (firstNameTextField.getText().equals("")) {
+                    JOptionPane.showMessageDialog(null, "Sorry, please fill in the First Name TextBox");
+                } else if (lastNameTextField.getText().equals("")) {
+                    JOptionPane.showMessageDialog(null, "Sorry, please fill in the Last Name TextBox");
+                } else if (addressTextField.getText().equals("")) {
+                    JOptionPane.showMessageDialog(null, "Sorry, please fill in the Address TextBox");
+                } else if (emailTextField.getText().equals("")) {
+                    JOptionPane.showMessageDialog(null, "Sorry, please fill in the Email TextBox");
+                } else if (phoneTextField.getText().equals("")) {
+                    JOptionPane.showMessageDialog(null, "Sorry, please fill in the Phone TextBox");
+                } else if (genderTextField.getText().equals("")) {
+                    JOptionPane.showMessageDialog(null, "Sorry, please fill in the Gender TextBox");
+                } else if (birthYearTextField.getText().equals("")) {
+                    JOptionPane.showMessageDialog(null, "Sorry, please fill in the Birth Year TextBox");
+                } else if (birthMonthTextField.getText().equals("")) {
+                    JOptionPane.showMessageDialog(null, "Sorry, please fill in the Birth Month TextBox");
+                } else if (birthDayTextField.getText().equals("")) {
+                    JOptionPane.showMessageDialog(null, "Sorry, please fill in the Birth Day TextBox");
+                } else if (sinTextField.getText().equals("")) {
+                    JOptionPane.showMessageDialog(null, "Sorry, please fill in the SIN TextBox");
+                } else if (departmentTextField.getText().equals("")) {
+                    JOptionPane.showMessageDialog(null, "Sorry, please fill in the department TextBox");
+                } else if (positionTextField.getText().equals("")) {
+                    JOptionPane.showMessageDialog(null, "Sorry, please fill in the position TextBox");
+                } else if (statusTextField.getText().equals("")) {
+                    JOptionPane.showMessageDialog(null, "Sorry, please fill in the Status TextBox");
+                } else if (hireYearTextField.getText().equals("")) {
+                    JOptionPane.showMessageDialog(null, "Sorry, please fill in the Hire Year TextBox");
+                } else if (hireMonthTextField.getText().equals("")) {
+                    JOptionPane.showMessageDialog(null, "Sorry, please fill in the Hire Month TextBox");
+                } else if (hireDayTextField.getText().equals("")) {
+                    JOptionPane.showMessageDialog(null, "Sorry, please fill in the Hire Day TextBox");
+                }
+    }
+    public void HRHourlyCheck() {
+                 if (hourlyEmployeeHourlyRateTextField.getText().equals("")) {
+                    JOptionPane.showMessageDialog(null, "Sorry, please fill in the Hourly Rate TextBox");
+                } else if (hourlyEmployeeHoursWorkedTextField.getText().equals("")) {
+                    JOptionPane.showMessageDialog(null, "Sorry, please fill in the Hours Worked TextBox");
+                } 
+    }
+    
+    public void SalaryCheck() {
+      if (salaryEmployeeSalaryTextField.getText().equals("")) {
+                    JOptionPane.showMessageDialog(null, "Sorry, please fill in the First Name TextBox");
+                } 
+    }
+    
+    public void CommissionCheck() {
+         if (commissionEmployeeCommissionRateTextField.getText().equals("")) {
+                    JOptionPane.showMessageDialog(null, "Sorry, please fill in the Commission Rate TextBox");
+                } else if (commissionEmployeeGrossSalesTextField.getText().equals("")) {
+                    JOptionPane.showMessageDialog(null, "Sorry, please fill in the Gross Sales TextBox");
+                }
+    }
+    
+    public void BasePlusCheck() {
+        if (basePlusCommissionEmployeeBaseSalarytextField.getText().equals("")) {
+                    JOptionPane.showMessageDialog(null, "Sorry, please fill in the Base Salary TextBox");
+                } 
+    }
+    public void ProductCheck() {
+       if (productNameTextField.getText().equals("")) {
+                    JOptionPane.showMessageDialog(null, "Sorry, please fill in the Product Name TextBox");
+                } else if (productDescriptionTextField.getText().equals("")) {
+                    JOptionPane.showMessageDialog(null, "Sorry, please fill in the Description TextBox");
+                } else if (productCategoryTextField.getText().equals("")) {
+                    JOptionPane.showMessageDialog(null, "Sorry, please fill in the catagory TextBox");
+                } else if (productPackagingTextField.getText().equals("")) {
+                    JOptionPane.showMessageDialog(null, "Sorry, please fill in the Packaging TextBox");
+                } else if (productHazardsTextField.getText().equals("")) {
+                    JOptionPane.showMessageDialog(null, "Sorry, please fill in the Hazards TextBox");
+                } else if (productRegulatorTextField.getText().equals("")) {
+                    JOptionPane.showMessageDialog(null, "Sorry, please fill in the Regulator TextBox");
+                } else if (productProcurementPricePerUnitTextField.getText().equals("")) {
+                    JOptionPane.showMessageDialog(null, "Sorry, please fill in the Procurement Price TextBox");
+                } else if (productWeightTextField.getText().equals("")) {
+                    JOptionPane.showMessageDialog(null, "Sorry, please fill in the Weight TextBox");
+                } else if (productHeightTextField.getText().equals("")) {
+                    JOptionPane.showMessageDialog(null, "Sorry, please fill in the Height TextBox");
+                } else if (productWidthTextField.getText().equals("")) {
+                    JOptionPane.showMessageDialog(null, "Sorry, please fill in the Weight TextBox");
+                } else if (productlengthTextField.getText().equals("")) {
+                    JOptionPane.showMessageDialog(null, "Sorry, please fill in the Length TextBox");
+                } else if (productAdoptionMonthTextField.getText().equals("")) {
+                    JOptionPane.showMessageDialog(null, "Sorry, please fill in the Adoption Month TextBox");
+                } else if (productAdoptionYearTextField.getText().equals("")) {
+                    JOptionPane.showMessageDialog(null, "Sorry, please fill in the Adoption Year TextBox");
+                } else if (productAdoptionDayTextField.getText().equals("")) {
+                    JOptionPane.showMessageDialog(null, "Sorry, please fill in the Adoption Day TextBox");
+                } else if (productExpiryYearTextField.getText().equals("")) {
+                    JOptionPane.showMessageDialog(null, "Sorry, please fill in the Expiry Year TextBox");
+                } else if (productExpiryMonthTextField.getText().equals("")) {
+                    JOptionPane.showMessageDialog(null, "Sorry, please fill in the Expiry Month TextBox");
+                } else if (productExpiryDayTextField.getText().equals("")) {
+                    JOptionPane.showMessageDialog(null, "Sorry, please fill in the Epiry Day TextBox");
+                } else if (productFragileTextField.getText().equals("")) {
+                    JOptionPane.showMessageDialog(null, "Sorry, please fill in the Fragile TextBox");
+                } else if (productStockLevelTextField.getText().equals("")) {
+                    JOptionPane.showMessageDialog(null, "Sorry, please fill in the Stock Level TextBox");
+                }
+                
+    }
+    public void ManuCheck() {
+                        if (manufacturerNameTextField.getText().equals("")) {
+                    JOptionPane.showMessageDialog(null, "Sorry, please fill in the Manu Name TextBox");
+                } else if (manufacturerAddressTextField.getText().equals("")) {
+                    JOptionPane.showMessageDialog(null, "Sorry, please fill in the Address TextBox");
+                } else if (manufacturerPhoneTextField.getText().equals("")) {
+                    JOptionPane.showMessageDialog(null, "Sorry, please fill in the Phone TextBox");
+                } else if (manufacturerEmailTextField.getText().equals("")) {
+                    JOptionPane.showMessageDialog(null, "Sorry, please fill in the Email TextBox");
+                } else if (manufacturerHandlerFirstNameTextField.getText().equals("")) {
+                    JOptionPane.showMessageDialog(null, "Sorry, please fill in the First Name TextBox");
+                } else if (manufacturerHandlerLastNameTextField.getText().equals("")) {
+                    JOptionPane.showMessageDialog(null, "Sorry, please fill in the Last Name TextBox");
+                }
     }
 
     // event handler for all tabs that hides inactive panels 
